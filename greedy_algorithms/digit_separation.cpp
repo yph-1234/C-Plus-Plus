@@ -32,7 +32,8 @@ namespace greedy_algorithms {
  * @brief A class that provides methods to separate the digits of a large
  * positive number.
  */
-class DigitSeparation {
+class DigitSeparation 
+{
  public:
     /**
      * @brief Default constructor for the DigitSeparation class.
@@ -45,15 +46,19 @@ class DigitSeparation {
      * @param largeNumber The large number to separate digits from.
      * @return A vector of digits in reverse order.
      */
-    std::vector<std::int64_t> digitSeparationReverseOrder(
-        std::int64_t largeNumber) const {
+    std::vector<std::int64_t> digitSeparationReverseOrder(std::int64_t largeNumber) const 
+    {
         std::vector<std::int64_t> result;
-        if (largeNumber != 0) {
-            while (largeNumber != 0) {
+        if (largeNumber != 0) 
+        {
+            while (largeNumber != 0) 
+            {
                 result.push_back(std::abs(largeNumber % 10));
                 largeNumber /= 10;
             }
-        } else {
+        } 
+        else
+        {
             result.push_back(0);
         }
         return result;
@@ -66,7 +71,8 @@ class DigitSeparation {
      * @return A vector of digits in forward order.
      */
     std::vector<std::int64_t> digitSeparationForwardOrder(
-        std::int64_t largeNumber) const {
+        std::int64_t largeNumber) const
+        {
         std::vector<std::int64_t> result =
             digitSeparationReverseOrder(largeNumber);
         std::reverse(result.begin(), result.end());
@@ -80,7 +86,8 @@ class DigitSeparation {
  * @brief self test implementation
  * @return void
  */
-static void tests() {
+static void tests() \
+{
     greedy_algorithms::DigitSeparation ds;
 
     // Test case: Positive number
