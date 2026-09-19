@@ -18,9 +18,12 @@
  * \returns index where the key-value occurs in the array
  * \returns -1 if key-value not found
  */
-int LinearSearch(int *array, int size, int key) {
-    for (int i = 0; i < size; ++i) {
-        if (array[i] == key) {
+int LinearSearch(int *array, int size, int key) 
+{
+    for (int i = 0; i < size; ++i) 
+    {
+        if (array[i] == key) 
+        {
             return i;
         }
     }
@@ -34,10 +37,12 @@ int LinearSearch(int *array, int size, int key) {
  * @brief Self-test implementations
  * @returns void
  */
-static void tests() {
+static void tests() 
+{
     int size = 4;
     int *array = new int[size];
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++)
+    {
         array[i] = i;
     }
 
@@ -49,7 +54,8 @@ static void tests() {
 
     size = 6;
     array = new int[size];
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) 
+    {
         array[i] = i;
     }
 
@@ -73,12 +79,14 @@ int main() {
 
     std::cin >> mode;
 
-    if (mode == 2) {
+    if (mode == 2) 
+    {
         int size = 0;
         std::cout << "\nEnter the size of the array [in range 1-30 ]: ";
         std::cin >> size;
 
-        while (size <= 0 || size > 30) {
+        while (size <= 0 || size > 30) 
+        {
             std::cout << "Size can only be 1-30. Please choose another value: ";
             std::cin >> size;
         }
@@ -88,7 +96,8 @@ int main() {
 
         // Input for the array elements
         std::cout << "Enter the array of " << size << " numbers: ";
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) 
+        {
             std::cin >> array[i];
         }
 
@@ -96,13 +105,16 @@ int main() {
         std::cin >> key;
 
         int index = LinearSearch(array, size, key);
-        if (index != -1) {
+        if (index != -1) 
+        {
             std::cout << "Number found at index: " << index << "\n";
-        } else {
+        } else 
+        {
             std::cout << "Array element not found";
         }
         delete[] array;
-    } else {
+    } else 
+    {
         tests();  // run self-test implementations
     }
     return 0;
